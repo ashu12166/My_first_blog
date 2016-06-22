@@ -1,10 +1,23 @@
 <html>
-<h>
-Got it
-</h>
-<p>
-Yaaay! But so far, our template only ever displays exactly the same information - whereas earlier we were talking about templates as allowing us to display different information in the same format.
+    <head>
+        <title>Ashu's blog</title>
 
-What we really want to do is display real posts added in our Django admin - and that's where we're going next.\
-</p>
+    </head>
+    <body>
+	<h>Ashu's posts</h>
+	<div>
+	    <h1><a href="/">Django Girls Blog</a></h1>	
+	</div>
+	
+	{% for post in post %}
+	    <div>
+		<p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaks }}</p>
+	    </div>
+	{% endfor %}
+
+
+	
+    </body>
 </html>
